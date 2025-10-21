@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NWSEVND7TP"></script>
+<script>
+  
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NWSEVND7TP');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - Talon IT & Forex</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    /* Menu Link Hover Effect */
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 2px;
+      background-color: #3b82f6; /* Tailwind blue-500/600 */
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-out;
+    }
+    .nav-link:hover::after, .active-link::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    
+    /* Light-Up Shadow Button Effect */
+    .light-up-button {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .light-up-button:hover {
+        box-shadow: 0 0 30px rgba(59, 130, 246, 0.7); /* Blue glow */
+        transform: translateY(-2px) scale(1.02);
+    }
+
+    /* Motion/Animation Keyframes */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideInLeft {
+        from { opacity: 0; transform: translateX(-50px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInRight {
+        from { opacity: 0; transform: translateX(50px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* Animation Utility Classes */
+    .animate-fadeIn {
+        animation: fadeIn 0.8s ease-out forwards;
+    }
+    .animate-slideInLeft {
+        animation: slideInLeft 0.8s ease-out forwards;
+    }
+    .animate-slideInRight {
+        animation: slideInRight 0.8s ease-out forwards;
+    }
+    .stagger-load > * {
+        opacity: 0; /* Hide elements initially */
+        animation: fadeIn 0.8s ease-out forwards;
+    }
+    .stagger-load > *:nth-child(1) { animation-delay: 0.1s; }
+    .stagger-load > *:nth-child(2) { animation-delay: 0.3s; }
+    .stagger-load > *:nth-child(3) { animation-delay: 0.5s; }
+    .stagger-load > *:nth-child(4) { animation-delay: 0.7s; }
+
+    /* Existing Card Hover Effects */
+    .card:hover .icon {
+        transform: translateY(-10px);
+    }
+    .card {
+        transition: transform 0.3s ease-in-out;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <header class="bg-gray-900 text-white py-4 shadow-lg sticky top-0 z-50">
+      <div class="container mx-auto px-6 flex justify-between items-center">
+          <div class="flex items-center space-x-2">
+              <img src="web1.jpg" alt="Talon IT & Forex Logo" class="h-10 w-10 object-contain rounded-full">
+              <h1 class="text-2xl font-bold text-white tracking-wider">Talon IT & Forex</h1>
+          </div>
+
+          <nav class="hidden sm:flex space-x-6 text-lg font-medium">
+              <a href="index.html" class="nav-link text-white hover:text-blue-400 active-link">Home</a>
+              <a href="about.html" class="nav-link text-white hover:text-blue-400">About Us</a>
+              <a href="services.html" class="nav-link text-white hover:text-blue-400">Services</a>
+              <a href="forex.html" class="nav-link text-white hover:text-blue-400">Forex</a>
+              <a href="schoolproject.html" class="nav-link text-white hover:text-blue-400">School Project</a>
+              <a href="blog.html" class="nav-link text-white hover:text-blue-400">Blog</a>
+              <a href="contact.html" class="nav-link text-white hover:text-blue-400">Contact</a>
+          </nav>
+
+          <button id="menu-button" class="sm:hidden p-2 focus:outline-none" aria-label="Open Menu">
+              <div id="hamburger-icon" class="space-y-1.5 transition duration-300">
+                  <span class="block w-8 h-1 bg-white rounded-full transition-all duration-300 transform origin-left"></span>
+                  <span class="block w-8 h-1 bg-white rounded-full transition-all duration-300"></span>
+                  <span class="block w-8 h-1 bg-white rounded-full transition-all duration-300 transform origin-left"></span>
+              </div>
+          </button>
+      </div>
+
+      <nav id="mobile-menu" class="hidden sm:hidden bg-gray-800 absolute w-full left-0 shadow-xl transition-all duration-300 ease-in-out">
+          <div class="flex flex-col p-4 space-y-2 text-center text-lg font-medium">
+              <a href="index.html" class="mobile-nav-link p-2 text-white hover:bg-gray-700 rounded-lg transition-colors duration-200 active-link">Home</a>
+              <a href="about.html" class="mobile-nav-link p-2 text-white hover:bg-gray-700 rounded-lg transition-colors duration-200">About Us</a>
+              <a href="services.html" class="mobile-nav-link p-2 text-white hover:bg-gray-700 rounded-lg transition-colors duration-200">Services</a>
+              <a href="forex.html" class="mobile-nav-link p-2 text-white hover:bg-gray-700 rounded-lg transition-colors duration-200">Forex</a>
+              <a href="schoolproject.html" class="mobile-nav-link p-2 text-white hover:bg-gray-700 rounded-lg transition-colors duration-200">School Project</a>
+              <a href="blog.html" class="mobile-nav-link p-2 text-white hover:bg-gray-700 rounded-lg transition-colors duration-200">Blog</a>
+              <a href="contact.html" class="mobile-nav-link p-2 text-white hover:bg-gray-700 rounded-lg transition-colors duration-200">Contact</a>
+          </div>
+      </nav>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-12">
+
+    <section class="text-center py-20 bg-white rounded-3xl shadow-2xl mb-12 animate-fadeIn">
+      <h2 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 tracking-tight">
+        Empowering Youth with <span class="text-blue-600">IT</span> & <span class="text-blue-600">Forex</span> Solutions
+      </h2>
+      <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+        Talon IT & Forex Solutions provides crucial digital services and financial education, focusing on youth and community development.
+      </p>
+      <a href="services.html" class="bg-blue-600 text-white px-8 py-3 rounded-xl font-semibold text-xl 
+          hover:bg-blue-700 transition duration-300 shadow-xl light-up-button
+      ">Explore Our Services</a>
+    </section>
+
+    <hr class="my-12 border-gray-300" />
+
+    <section class="py-12 px-4 text-center">
+      <h3 class="text-4xl font-bold text-gray-900 mb-10 animate-fadeIn" style="animation-delay: 0s;">Our Focus</h3>
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto stagger-load">
+
+        <a href="services.html" class="group block card p-8 bg-white rounded-2xl shadow-lg border border-gray-200 hover:border-blue-500 text-center">
+          <div class="flex flex-col items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon h-16 w-16 text-blue-500 mb-4 transition duration-300 group-hover:text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <h4 class="text-2xl font-semibold mb-2 text-gray-900">IT Solutions</h4>
+            <p class="text-lg text-gray-600">Offering networking, technical support, and essential digital infrastructure services.</p>
+          </div>
+        </a>
+
+        <a href="forex.html" class="group block card p-8 bg-white rounded-2xl shadow-lg border border-gray-200 hover:border-blue-500 text-center">
+          <div class="flex flex-col items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon h-16 w-16 text-blue-500 mb-4 transition duration-300 group-hover:text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v20M5 9l7 7 7-7"></path>
+              <path d="M3 3h18M3 21h18"></path>
+            </svg>
+            <h4 class="text-2xl font-semibold mb-2 text-gray-900">Forex Trading</h4>
+            <p class="text-lg text-gray-600">Expert mentorship, signals, and educational resources to master the financial markets.</p>
+          </div>
+        </a>
+
+        <a href="schoolproject.html" class="group block card p-8 bg-white rounded-2xl shadow-lg border border-gray-200 hover:border-blue-500 text-center">
+          <div class="flex flex-col items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon h-16 w-16 text-blue-500 mb-4 transition duration-300 group-hover:text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <path d="M14 2v6h6"></path>
+              <path d="M16 13H8"></path>
+              <path d="M16 17H8"></path>
+              <path d="M10 9H8"></path>
+            </svg>
+            <h4 class="text-2xl font-semibold mb-2 text-gray-900">School Project</h4>
+            <p class="text-lg text-gray-600">Our initiative to empower Mamelodi schools with stable and accessible internet access.</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <hr class="my-12 border-gray-300" />
+
+    <section class="py-12 px-4 text-center">
+      <h3 class="text-4xl font-bold text-gray-900 mb-10 animate-fadeIn" style="animation-delay: 0.2s;">Why Choose Talon?</h3>
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto stagger-load" style="animation-delay: 0.4s;">
+        <div class="p-6 bg-white rounded-xl shadow-lg border border-gray-200">
+          <h4 class="text-2xl font-semibold text-blue-600 mb-2">Youth Focused</h4>
+          <p class="text-gray-700">Committed to empowering the next generation through tech and financial literacy.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow-lg border border-gray-200">
+          <h4 class="text-2xl font-semibold text-blue-600 mb-2">Dual Expertise</h4>
+          <p class="text-gray-700">Unique blend of high-quality IT services and professional Forex mentorship.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow-lg border border-gray-200">
+          <h4 class="text-2xl font-semibold text-blue-600 mb-2">Real Impact</h4>
+          <p class="text-gray-700">Dedicated to giving back through community projects like the Mamelodi Wi-Fi initiative.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-gray-900 text-white py-8 mt-12">
+    <div class="container mx-auto px-6 text-center">
+      <p>&copy; 2024 Talon IT & Forex Solutions. All rights reserved.</p>
+      <div class="mt-4 space-x-4">
+        <a href="contact.html" class="text-blue-400 hover:text-blue-300">Contact</a>
+        <a href="about.html" class="text-blue-400 hover:text-blue-300">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const spans = hamburgerIcon.querySelectorAll('span');
+
+        if (menuButton) {
+            menuButton.addEventListener('click', () => {
+                const isMenuClosed = mobileMenu.classList.toggle('hidden');
+                
+                // Toggle hamburger animation
+                if (!isMenuClosed) {
+                    // Menu is now open, transform to an 'X'
+                    spans[0].classList.add('rotate-45', 'translate-y-2');
+                    spans[1].classList.add('opacity-0');
+                    spans[2].classList.add('-rotate-45', '-translate-y-2');
+                } else {
+                    // Menu is now closed, revert to lines
+                    spans[0].classList.remove('rotate-45', 'translate-y-2');
+                    spans[1].classList.remove('opacity-0');
+                    spans[2].classList.remove('-rotate-45', '-translate-y-2');
+                }
+            });
+        }
+    });
+  </script>
+
+</body>
+</html>
